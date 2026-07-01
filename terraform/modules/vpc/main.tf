@@ -23,17 +23,17 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_subnet" "public" {
-  count             = 2
-  vpc_id            = aws_vpc.main.id
-  cidr_block        = "10.0.${count.index}.0/24"
-  availability_zone = data.aws_availability_zones.available.names[count.index]
+  count                   = 2
+  vpc_id                  = aws_vpc.main.id
+  cidr_block              = "10.0.${count.index}.0/24"
+  availability_zone       = data.aws_availability_zones.available.names[count.index]
   map_public_ip_on_launch = true
 
   tags = {
-    Name                                          = "${var.project_name}-public-${count.index + 1}"
-    Environment                                   = var.environment
-    "kubernetes.io/role/elb"                      = "1"
-    "kubernetes.io/cluster/${var.project_name}"   = "shared"
+    Name                                                = "${var.project_name}-public-${count.index + 1}"
+    Environment                                         = var.environment
+    "kubernetes.io/role/elb"                            = "1"
+    "kubernetes.io/cluster/${var.project_name}-cluster" = "shared"
   }
 }
 
@@ -44,10 +44,10 @@ resource "aws_subnet" "private" {
   availability_zone = data.aws_availability_zones.available.names[count.index]
 
   tags = {
-    Name                                          = "${var.project_name}-private-${count.index + 1}"
-    Environment                                   = var.environment
-    "kubernetes.io/role/internal-elb"             = "1"
-    "kubernetes.io/cluster/${var.project_name}"   = "shared"
+    Name                                                = "${var.project_name}-private-${count.index + 1}"
+    Environment                                         = var.environment
+    "kubernetes.io/role/internal-elb"                   = "1"
+    "kubernetes.io/cluster/${var.project_name}-cluster" = "shared"
   }
 }
 
