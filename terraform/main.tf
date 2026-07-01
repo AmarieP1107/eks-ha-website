@@ -38,3 +38,12 @@ module "alb" {
   certificate_arn       = module.acm.certificate_arn
   eks_security_group_id = module.eks.cluster_security_group_id
 }
+
+module "monitoring" {
+  source        = "./modules/monitoring"
+  project_name  = var.project_name
+  environment   = var.environment
+  cluster_name  = module.eks.cluster_name
+  db_identifier = "amarie-dev-mysql"
+  alarm_email   = "amariephillips11@gmail.com"
+}

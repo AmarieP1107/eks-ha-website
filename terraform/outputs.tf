@@ -22,3 +22,8 @@ output "certificate_status" {
   description = "Status of the ACM certificate"
   value       = module.acm.certificate_status
 }
+
+output "log_group_name" {
+  description = "CloudWatch log group for application logs"
+  value       = module.monitoring.log_group_name
+}
