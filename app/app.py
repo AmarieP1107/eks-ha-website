@@ -24,8 +24,9 @@ def hello():
     return f'''
     <html>
         <body>
-            <h1>Hello World!</h1>
+            <h1>Hello World! 🚀</h1>
             <p>Database status: {db_status}</p>
+            <p>Version: 2.0</p>
         </body>
     </html>
     '''
