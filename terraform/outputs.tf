@@ -12,3 +12,13 @@ output "db_endpoint" {
   description = "Endpoint for the RDS instance"
   value       = module.rds.db_endpoint
 }
+
+output "alb_dns_name" {
+  description = "DNS name of the ALB"
+  value       = module.alb.alb_dns_name
+}
+
+output "certificate_status" {
+  description = "Status of the ACM certificate"
+  value       = module.acm.certificate_status
+}
