@@ -26,7 +26,7 @@ def hello():
         <body>
             <h1>Hello World! 🚀</h1>
             <p>Database status: {db_status}</p>
-            <p>Version: 2.0</p>
+            <p>Version: 3.0</p>
         </body>
     </html>
     '''
