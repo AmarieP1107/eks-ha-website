@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: web-app
-        image: 971951985715.dkr.ecr.eu-west-2.amazonaws.com/amarie-dev-app:def2e9921e5ea36ab919d75ad77e95f75303c8b4
+        image: 971951985715.dkr.ecr.eu-west-2.amazonaws.com/amarie-dev-app:b20389bf314144b1295bf77f209ca6b562ae023a
         ports:
         - containerPort: 5000
         env:
